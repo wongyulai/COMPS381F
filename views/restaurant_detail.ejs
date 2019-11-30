@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+    <div class="w3-container w3-green" align="center">
+        <h1><%=rest[0].res_name%></h1>
+        <h1><%=rest[0].owner%></h1>
+    </div>
+    <img src=" data:<%=rest[0].mimetype%>;base64, <%=rest[0].image%>" style="width:100%">
+    <div class="w3-container w3-green" align="center">
+        <h2><%=rest[0].borough%></h2>
+        <h2><%=rest[0].cuisine%></h2>
+        <h2><%=rest[0].street%></h2>
+        <h2><%=rest[0].zipcode%></h2>
+        <h2><form action="/map" method="get">
+        <input type="hidden" name="lon" value="<%= rest[0].lon %>">
+        <input type="hidden" name="lat" value="<%= rest[0].lat %>">
+        <button> Map </button>
+       </form>
+           <%try{for(var i = 0; i < rest[0].Rate.length ; i++){ %>
+    <h5>Rate user: <%= rest[0].Rate[i].owner %>: score: <%= rest[0].Rate[i].score %></h5>
+    <% }}catch(e){%><h5>NO ANY RATE BEFORE</h5><%} %>
+    </div>
+<p><% for (r in rest) { %>
+                <a href=/delete?_id=<%= rest[0]._id%>>Delete</a>
+            <% } %></p>
+<p><% for (r in rest) { %>
+                <a href=/update?_id=<%= rest[0]._id%>>Update</a>
+            <% } %></p>
+<p><% for (r in rest) { %>
+                <a href=/rate?_id=<%= rest[0]._id%>>Rate</a>
+            <% } %></p>
+<h2><a href=/rest>Go back to list</a></h2>
+<h2><a href=/logout>logout</a></h2>
+</body>
+
+</html>

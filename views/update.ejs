@@ -1,0 +1,18 @@
+<html>
+	<body> 
+		<form action="update" method="post" enctype="multipart/form-data">
+			ID: <input type="text" name="_id" readonly="readonly" value=<%=rest[0]._id%>><br>
+                        <input type="hidden" name="owner" value=<%=rest[0].owner%>><br>
+			Name: <input type="text" name="res_name" value=<%=rest[0].res_name%>><br>
+			Cuisine: <input type="text" name="cuisine" value=<%=rest[0].cuisine%>><br>
+			Street: <input type="text" name="street" value=<%=rest[0].street%>><br>
+			Building: <input type="text" name="building" value=<%=rest[0].building%>><br>
+			Zipcode: <input type="text" name="zipcode" value=<%=rest[0].zipcode%>><br>
+			GPS Coordinates (lon.): <input type="float" name="lon" value=<%=rest[0].lon%>><br>
+			GPS Coordinates (lat.): <input type="float" name="lat" value=<%=rest[0].lat%>><br>
+			<input type="file" name="filetoupload"><br>
+			Photo<br>
+			<input type="submit" value="submit">
+ 		</form>
+	</body>
+</html>

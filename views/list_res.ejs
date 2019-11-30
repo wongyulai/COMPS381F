@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Restaurant</title>
+    </head>
+    <body>
+        <H2>Showing <%= rest.length %> document(s)</H2>
+        <h2><a href=/uploadRes>Create</a></h2>
+        <form action="/rest" method="get">
+        <button> Find all record / back to list </button>
+        </form>
+        <form action="/find" method="get">
+          <label>Search by </label>
+        <select name="key">
+        　<option value="name">name</option>
+        　<option value="borough">borough</option>
+        　<option value="cuisine">cuisine</option>
+        　<option value="owner">owner</option>
+        </select>
+          <input type="text" name="find_value" required="required">
+          <input type="submit" name="Submit" value="Click me to Find Record">
+        </form>
+        <ol>
+            <% for (r in rest) { %>
+                <li><a href=/display?_id=<%= rest[r]._id%>><%=rest[r].res_name%></a></li>
+            <% } %>
+        </ol>
+        <h2><a href=/logout>logout</a></h2>
+    </body>
+</html>

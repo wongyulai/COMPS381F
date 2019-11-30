@@ -1,0 +1,12 @@
+<html>
+        <body>
+             <h2>Rate</h2>
+               <form action="/rate" method="post">
+                  ID: <input type="text" name="_id" readonly="readonly" value=<%=rest[0]._id%>></br>
+                  <h1>Restaurant name: <%=rest[0].res_name%></h1></br>
+                  Score(1-10):<input type="number" name="rate" min="1" max="10">
+                  <input type="submit" value="submit">
+              </form>
+         </body>
+ </html>
+

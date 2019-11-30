@@ -1,0 +1,16 @@
+<html>
+	<body> 
+		<form action="delete" method="post" enctype="multipart/form-data">
+			<input type="text" name="_id" readonly="readonly" value=<%=rest[0]._id%>><br>
+                        <input type="text" name="owner" readonly="readonly" value=<%=rest[0].owner%>><br>
+			<input type="hidden" name="res_name" value=<%=rest[0].res_name%>><br>
+			<input type="hidden" name="cuisine" value=<%=rest[0].cuisine%>><br>
+			<input type="hidden" name="street" value=<%=rest[0].street%>><br>
+			<input type="hidden" name="building" value=<%=rest[0].building%>><br>
+			<input type="hidden" name="zipcode" value=<%=rest[0].zipcode%>><br>
+			<input type="hidden" name="lon" value=<%=rest[0].lon%>><br>
+			<input type="hidden" name="lat" value=<%=rest[0].lat%>><br>
+			<input type="submit" value="Delete for Sure">
+ 		</form>
+	</body>
+</html>
